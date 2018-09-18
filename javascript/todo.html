@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ToDo in Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body onload="domLoadSuccess()">
+    <h3>Javascript Todo</h3>
+    <label for="todo">Todo Item</label>
+    <input type="text">
+    <button onclick="addTodo()">Add</button>
+    <div id="todolist">
+
+    </div>
+
+    <script>
+        //This is created only once
+        var newUl = document.createElement("ul")
+        var todolistref = document.getElementById("todolist")
+        var counter = 0;
+        function addTodo() {
+           
+            var valueInput = document.getElementsByTagName("input")[0].value
+            saveTodo(valueInput)
+            var newLi = document.createElement("li")
+            //create new element outside Dom.created each and every time      
+            newLi.innerHTML = valueInput
+
+            //insert new element to DOM
+            newUl.appendChild(newLi)
+            todolistref.appendChild(newUl)
+            document.getElementsByTagName("input")[0].value = ""
+        }
+
+        function saveTodo(inputText) { 
+            console.log('counter value in savetodo method',counter)                 
+            localStorage.setItem("countervalue", counter)
+            localStorage.setItem("input_"+counter, inputText) 
+            counter++  
+        }
+
+        function domLoadSuccess() {
+            console.log("on dom load success", localStorage.getItem("countervalue"))
+            if (typeof (Storage) != "undefined") {
+                if (localStorage.getItem("countervalue")== null) {
+                    console.log('1')
+                    counter = 0;
+                } else {
+                    console.log('2')
+                    var currentCounter = localStorage.getItem("countervalue")
+                    var counter = parseInt(currentCounter)
+                }
+            }
+            console.log('on load countervalue',counter)
+             countervalue1=counter;
+            loadList(countervalue1)
+        }
+
+        function loadList(countervalue1) {
+            console.log('load list called',countervalue1)
+            for (var i = 0; i < countervalue1+1; i++) {
+                var newLi = document.createElement("li")
+                console.log('object',"input_"+i)
+                var txt = localStorage.getItem("input_"+i)
+                console.log('txt',txt)
+                newLi.innerHTML = txt
+                //insert new element to DOM
+                newUl.appendChild(newLi)
+            }
+            todolistref.appendChild(newUl)
+            document.getElementsByTagName("input")[0].focus()
+        }
+
+
+    </script>
+</body>
+
+</html>

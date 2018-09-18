@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript DOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .para1 {
+            color: blue;
+        }
+
+        .para2 {
+            color: red
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="h1">JS DOM Navigator</h1>
+    <div>
+        <h2>Demo heading 2</h2>
+        <p class="para1"> From the cognizant </p>
+        <p class="para2">Learning the javascript tutorial</p>
+        <p>Today is the end of the class</p>
+    </div>
+    <script>
+        var idRef = document.getElementById("h1")
+        idRef.innerHTML = "This is modified: JS DOM Navigator"
+        var tagRef = document.getElementsByTagName("p")
+        console.log(tagRef)
+        for (i = 0; i < tagRef.length; i++) {
+            tagRef[i].innerHTML = i + " is a pragraph";
+        }
+
+        var classRef = document.getElementsByClassName("para1");
+
+
+        document.querySelectorAll("p.para1")
+    </script>
+
+</body>
+
+</html>

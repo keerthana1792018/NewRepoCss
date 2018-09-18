@@ -1,0 +1,73 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.logo{
+    width: 200px;
+    float:left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+ul{
+    list-style: none;
+    float: right;
+    margin-top: 50px;
+
+}
+li{
+    display: inline;
+    margin-right: 10px;
+    color:firebrick;
+    font-weight:bold;
+    cursor: pointer;
+    padding-top: 5px;
+    font-size: 125%;
+}
+
+li:hover{
+    color: goldenrod;
+    border: 1px solid goldenrod;
+    transition:all 0.5s ease-in;
+    background-color:gold; 
+}
+Header{
+    background-image:url("background.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: 150%;
+    background-repeat: no-repeat; 
+}
+.messagecontainer{
+    top: 40%;
+    font-size: 210%;
+    position: absolute;
+    border: 1px solid rgba(127, 212, 226, 0);
+    width:65%;
+    margin-top:10px; 
+    padding: 20px;
+    font-weight: bold;
+    left: 1%;
+    border-radius: 5px;
+    background-color: rgba(188, 204, 220, 0.5) ;
+}
+.messagetext{
+    font-size: 50%;
+}
+
+.button1{
+    cursor: pointer;
+    color:blue;
+    font-size: 56%;
+    border: 1px solid blue;
+    background-color:cornflowerblue;
+    padding: 1%;
+    border-radius: 5px;
+    margin-right: 14px;
+
+}
+
+.button1:hover{
+    color:deepskyblue;
+    transition:all 0.5s ease-in;
+}

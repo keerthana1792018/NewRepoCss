@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jquery Basics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body>
+<h1>Query Basics</h1>
+<p id="para1">This is para 1</p>
+<p class="para2">This is para 2</p>
+<p>This is para 3</p>
+<p>This is para 4</p>
+<button>Click</button>
+<script>
+$(document).ready(function(){
+        // $("p").hide()
+        $("button").click(function(){
+            $("p.para2").toggle()
+        })
+})
+
+</script>
+</body>
+
+</html>
